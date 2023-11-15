@@ -20,7 +20,7 @@ public class MainApp {
       userService.add(new User("User3", "Lastname3", "user3@mail.ru"));
       userService.add(new User("User8", "Lastname4", "user4@mail.ru"));
 
-      System.out.println("test2");
+      System.out.println("test3");
 
       List<User> users = userService.listUsers();
       for (User user : users) {
