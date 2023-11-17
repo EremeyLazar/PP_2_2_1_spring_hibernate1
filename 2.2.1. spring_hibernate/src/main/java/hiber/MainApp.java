@@ -16,16 +16,25 @@ public class MainApp {
 
       UserService userService = context.getBean(UserService.class);
 
+      User rus = new User("Владимир", "Путин", "vovan@mail.ru");
+      User us = new User("Joe", "Biden", "JoeBi@aol.com");
+      User fr = new User("Emmanuel", "Macron", "emmy@inbox.fr");
+      User af = new User("اشرف", "غني", "ashik@moic.gov.af");
 
-//      userService.add(new User("User6", "Lastname1", "user1@mail.ru"));
-//      userService.add(new User("User7", "Lastname2", "user2@mail.ru"));
-//      userService.add(new User("User3", "Lastname3", "user3@mail.ru"));
-//      userService.add(new User("User8", "Lastname4", "user4@mail.ru"));
+      Car carRus = new Car("Moskvich", 2140);
+      Car carUs = new Car("Mustang", 666);
+      Car carFr = new Car("Renau", 1001011);
+      Car carAf = new Car("T-", 90 );
 
-//      User user1 = new User("Shurik", "Tamilov", "shurik@mail.su");
-//      Car car = new Car("Zhigul", 12002316);
-//      user1.setCar(car);
-//      userService.add(user1);
+      rus.setCar(carRus);
+      us.setCar(carUs);
+      fr.setCar(carFr);
+      af.setCar(carAf);
+
+      userService.add(rus);
+      userService.add(us);
+      userService.add(fr);
+      userService.add(af);
 
       List<User> users = userService.listUsers();
       for (User user : users) {
@@ -37,7 +46,7 @@ public class MainApp {
          System.out.println();
       }
 
-      User user = userService.getUserByCarModelAndSerie("Moskvich", 666);
+      User user = userService.getUserByCarModelAndSerie("Mustang", 666);
       System.out.println(user);
 
 
