@@ -37,7 +37,7 @@ public class UserDaoImp implements UserDao {
       nativeQuery.setParameter("paramSeries", series);
       Car car =  (Car) nativeQuery.getSingleResult();
       User user = car.getUser();
-      return new user ;
+      return user ;
    }
 }
 

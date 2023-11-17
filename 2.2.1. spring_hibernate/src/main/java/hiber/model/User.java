@@ -19,10 +19,7 @@ public class User {
    @Column(name = "email")
    private String email;
 
-
-//(cascade = CascadeType.ALL)
    @OneToOne (cascade = CascadeType.ALL)
-//   @MapsId
    @JoinColumn (name = "car_id")
    private Car car;
 
