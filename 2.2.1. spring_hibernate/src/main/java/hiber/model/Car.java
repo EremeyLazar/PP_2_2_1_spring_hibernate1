@@ -1,25 +1,35 @@
 package hiber.model;
-public class Car {
-    private Long id;
 
+import javax.persistence.*;
+
+@Entity
+@Table (name = "car")
+public class Car {
+
+    @Id
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
+    @Column (name = "id")
+    private Long carId;
+
+    @Column (name = "model")
     private String model;
 
+    @Column (name = "series")
     private int series;
 
     public Car () {}
 
-    public Car (Long id, String model, int series) {
-        this.id = id;
+    public Car (String model, int series) {
         this.model = model;
         this.series = series;
     }
 
     public Long getId() {
-        return id;
+        return carId;
     }
 
     public void setId(Long id) {
-        this.id = id;
+        this.carId = id;
     }
 
     public String getModel() {
@@ -36,5 +46,12 @@ public class Car {
 
     public void setSeries(int series) {
         this.series = series;
+    }
+
+    @Override
+    public String toString() {
+        return
+                " model - " + model +
+                ", series - " + series ;
     }
 }
