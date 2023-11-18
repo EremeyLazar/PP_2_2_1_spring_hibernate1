@@ -46,7 +46,7 @@ public class MainApp {
             System.out.println();
         }
 
-        User user = userService.getUserByCarModelAndSerie("T", 90);
+        User user = userService.getUserByCarModelAndSerie("Mustang", 666);
         System.out.println(user);
 
 
