@@ -3,26 +3,27 @@ package hiber.model;
 import javax.persistence.*;
 
 @Entity
-@Table (name = "car")
+@Table(name = "car")
 public class Car {
 
     @Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
-    @Column (name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long carId;
 
-    @Column (name = "model")
+    @Column(name = "model")
     private String model;
 
-    @Column (name = "series")
+    @Column(name = "series")
     private int series;
 
-    @OneToOne (mappedBy = "car", cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "car", cascade = CascadeType.ALL)
     private User user;
 
-    public Car () {}
+    public Car() {
+    }
 
-    public Car (String model, int series) {
+    public Car(String model, int series) {
         this.model = model;
         this.series = series;
     }
@@ -63,6 +64,6 @@ public class Car {
     public String toString() {
         return
                 " model - " + model +
-                ", series - " + series ;
+                        ", series - " + series;
     }
 }
