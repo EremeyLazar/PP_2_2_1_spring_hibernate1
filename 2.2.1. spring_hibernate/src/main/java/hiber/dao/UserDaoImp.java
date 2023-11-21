@@ -30,14 +30,6 @@ public class UserDaoImp implements UserDao {
 
     @Override
     public User getUserByCarModelAndSerie(String model, int series) {
-//        Query nativeQuery
-//                = sessionFactory.getCurrentSession().createNativeQuery("SELECT * FROM `car` WHERE `MODEL` = :paramModel AND series = :paramSeries", Car.class);
-//        nativeQuery.setParameter("paramModel", model);
-//        nativeQuery.setParameter("paramSeries", series);
-//        Car car = (Car) nativeQuery.getSingleResult();
-//        User user = car.getUser();
-
-
         Query query = sessionFactory.getCurrentSession().createQuery("from User where car.model =:paramModel And car.series = :paramSeries");
         query.setParameter("paramModel", model);
         query.setParameter("paramSeries", series);
