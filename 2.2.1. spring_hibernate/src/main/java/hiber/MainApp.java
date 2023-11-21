@@ -48,6 +48,7 @@ public class MainApp {
 
         User user = userService.getUserByCarModelAndSerie("Mustang", 666);
         System.out.println(user);
+        System.out.println();
 
 
         context.close();
